@@ -1,6 +1,6 @@
 {
   "name": "@drovp/ffmpeg",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "ffmpeg as a Drovp dependency.",
   "main": "dist/index.js",
   "keywords": [
