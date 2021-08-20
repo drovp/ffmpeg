@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"removeComments": true,
 		"baseUrl": "src",
