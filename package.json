@@ -2,6 +2,9 @@
   "name": "@drovp/ffmpeg",
   "version": "0.0.1",
   "description": "FFMPEG as a Drovp dependency.",
+  "homepage": "https://github.com/drovp/ffmpeg",
+  "bugs": "https://github.com/drovp/ffmpeg/issues",
+  "repository": "github:drovp/ffmpeg",
   "main": "dist/index.js",
   "keywords": [
     "drovpdependency"
