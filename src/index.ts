@@ -112,7 +112,11 @@ async function installDarwin(name: string, utils: InstallUtils) {
 }
 
 async function installFromOnlineArchive(
-	{url, filesToExtract, onBeforeCopy}: {url: string, filesToExtract: Record<string, string>, onBeforeCopy?: () => void},
+	{
+		url,
+		filesToExtract,
+		onBeforeCopy,
+	}: {url: string; filesToExtract: Record<string, string>; onBeforeCopy?: () => void},
 	{dataPath, tmpPath, download, extract, cleanup, progress, stage, log}: InstallUtils
 ) {
 	stage('downloading');
@@ -149,8 +153,11 @@ async function installFromOnlineArchive(
 			await FSP.rename(binFilePath, destFilePath);
 		}
 	} catch (error) {
-		if (error.code === 'ENOENT') throw new Error(`Unexpected archive structure: ${error.message}`);
-		else throw error;
+		if (error instanceof Error && (error as any).code === 'ENOENT') {
+			throw new Error(`Unexpected archive structure: ${error.message}`);
+		} else {
+			throw error;
+		}
 	}
 }
 
