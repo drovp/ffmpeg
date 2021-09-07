@@ -7,7 +7,10 @@
   "repository": "github:drovp/ffmpeg",
   "main": "dist/index.js",
   "keywords": [
-    "drovpdependency"
+    "drovpdependency",
+    "ffmpeg",
+    "ffplay",
+    "ffprobe"
   ],
   "author": "tomasklaen",
   "license": "MIT",
