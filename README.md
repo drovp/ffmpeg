@@ -9,9 +9,9 @@ Pre-built binaries are downloaded from:
 
 **IMPORTANT!**
 
-`ffplay` is not available on linux systems! We're using [https://johnvansickle.com/ffmpeg/](https://johnvansickle.com/ffmpeg/) as a source of static binaries for linux, and it doesn't include `ffplay`.
+The source of static binaries we're using for Linux ([https://johnvansickle.com/ffmpeg/](https://johnvansickle.com/ffmpeg/)) doesn't come with `ffplay`, therefore you can't rely on `ffplay` dependency to be available on Linux. If you know about a better or a separate source with `ffplay` in it, share it in [#1](https://github.com/drovp/ffmpeg/issues/1).
 
-If you know about a better or a separate source with `ffplay` in it, share it in [#1](https://github.com/drovp/ffmpeg/issues/1).
+The dependency loader does try to fall back to local binaries exposed in current platform's PATH, but that is of course unreliable.
 
 ## Usage
 
