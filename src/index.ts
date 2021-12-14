@@ -31,7 +31,8 @@ async function load(name: string, {dataPath}: LoadUtils) {
 
 	async function checkPath(path: string) {
 		let stdout = (await exec(`"${path}" -version`)).stdout;
-		if (new RegExp(`^${name} version`, 'gi').exec(stdout) != null) return path;
+		const version = new RegExp(`^${name} version (?<version>[^ ]+)( |&)`, 'm').exec(stdout)?.groups?.version;
+		if (version != null) return {version, payload: path};
 		else throw new Error(`Unexpected stdout when loading ${name}:\n${stdout}`);
 	}
 
@@ -171,7 +172,7 @@ async function installFromOnlineArchive(
  * each dependency before install, but I'll keep it here just in case.
  */
 async function recentlyThrottle(utils: LoadUtils, fn: () => any) {
-	let exists: string | boolean = false;
+	let exists: any = false;
 	try {
 		exists = await load('ffmpeg', utils);
 	} catch {}
