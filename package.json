@@ -1,6 +1,6 @@
 {
   "name": "@drovp/ffmpeg",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "FFMPEG as a Drovp dependency.",
   "homepage": "https://github.com/drovp/ffmpeg",
   "bugs": "https://github.com/drovp/ffmpeg/issues",
