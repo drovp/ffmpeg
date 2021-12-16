@@ -73,6 +73,7 @@ async function installWindows(utils: InstallUtils) {
 					'{rootFile}/bin/ffplay.exe': 'ffplay.exe',
 				},
 				onBeforeCopy: async () => {
+					utils.progress(null);
 					utils.stage('cleaning destination');
 					await utils.cleanup(utils.dataPath);
 				},
@@ -93,6 +94,7 @@ async function installLinux(utils: InstallUtils) {
 					// no ffplay in this archive
 				},
 				onBeforeCopy: async () => {
+					utils.progress(null);
 					utils.stage('cleaning destination');
 					await utils.cleanup(utils.dataPath);
 				},
@@ -126,6 +128,7 @@ async function installFromOnlineArchive(
 	const archivePath = Path.join(tmpPath, filename);
 	const archiveName = filename.replace(/\.[a-z\.]+$/, '');
 
+	progress(null);
 	stage('extracting');
 	log(`archive: ${archivePath}`);
 	const extractedFiles = await extract(archivePath);
