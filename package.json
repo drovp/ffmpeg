@@ -1,43 +1,44 @@
 {
-  "name": "@drovp/ffmpeg",
-  "version": "1.0.4",
-  "description": "FFMPEG as a Drovp dependency.",
-  "homepage": "https://github.com/drovp/ffmpeg",
-  "bugs": "https://github.com/drovp/ffmpeg/issues",
-  "repository": "github:drovp/ffmpeg",
-  "main": "dist/index.js",
-  "keywords": [
-    "drovpdependency",
-    "ffmpeg",
-    "ffplay",
-    "ffprobe"
-  ],
-  "author": "tomasklaen",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
-    "clean": "rimraf dist",
-    "start": "npm-run-all clean watch",
-    "test": "tsc -p . --noEmit",
-    "preversion": "npm-run-all clean build",
-    "git-push": "git push",
-    "npm-publish": "npm publish",
-    "postversion": "npm-run-all git-push npm-publish"
-  },
-  "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
-    "tslib": "^2.3.1",
-    "typescript": "^4.5.4"
-  },
-  "dependencies": {
-    "@drovp/types": "^4.0.0"
-  }
+	"name": "@drovp/ffmpeg",
+	"version": "1.0.4",
+	"description": "FFMPEG as a Drovp dependency.",
+	"homepage": "https://github.com/drovp/ffmpeg",
+	"bugs": "https://github.com/drovp/ffmpeg/issues",
+	"repository": "github:drovp/ffmpeg",
+	"main": "dist/index.js",
+	"keywords": [
+		"drovpdependency",
+		"ffmpeg",
+		"ffplay",
+		"ffprobe"
+	],
+	"author": "tomasklaen",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"dist",
+		"*.md"
+	],
+	"scripts": {
+		"build": "tsc",
+		"watch": "tsc --watch",
+		"clean": "rimraf dist",
+		"start": "npm-run-all clean watch",
+		"test": "tsc -p . --noEmit",
+		"preversion": "npm-run-all clean build",
+		"git-push": "git push",
+		"npm-publish": "npm publish",
+		"postversion": "npm-run-all git-push npm-publish"
+	},
+	"devDependencies": {
+		"npm-run-all": "^4.1.5",
+		"rimraf": "^3.0.2",
+		"tslib": "^2.3.1",
+		"typescript": "^4.5.4"
+	},
+	"dependencies": {
+		"@drovp/types": "^4.0.0"
+	}
 }
