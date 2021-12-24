@@ -3,9 +3,10 @@
 Provides `ffmpeg`, `ffprobe`, and `ffplay` static binaries as a [Drovp](https://drovp.app) processor dependencies.
 
 Pre-built binaries are downloaded from:
-- Windows: https://www.gyan.dev/ffmpeg/builds/
-- MacOS: https://evermeet.cx/ffmpeg/
-- Linux: https://johnvansickle.com/ffmpeg/ (**! missing `ffplay`**)
+
+-   Windows: https://www.gyan.dev/ffmpeg/builds/
+-   MacOS: https://evermeet.cx/ffmpeg/
+-   Linux: https://johnvansickle.com/ffmpeg/ (**! missing `ffplay`**)
 
 **IMPORTANT!**
 
@@ -20,7 +21,7 @@ Require in your processor config:
 ```js
 plugin.registerProcessor('name', {
 	// ...config...
-	dependencies: ['@drovp/ffmpeg:ffmpeg']
+	dependencies: ['@drovp/ffmpeg:ffmpeg'],
 });
 ```
 
@@ -63,37 +64,3 @@ Dependency IDs and their values inside processor's `utils.dependencies` object.
 **Value**: path to ffplay binary
 
 **Not available on Linux atm!**
-
-
-## Dev environment
-
-When developing, run:
-
-```
-npm start
-```
-
-and start working.
-
-When releasing, run:
-
-```
-npm version [<newversion> | major | minor | patch]
-npm publish
-```
-
-### npm start
-
-Cleans up, and continuously builds on file changes.
-
-### npm run build
-
-Builds dist files.
-
-### npm version [&lt;newversion&gt; | major | minor | patch]
-
-1. Cleans up.
-1. Build for production.
-1. Bumps the version.
-1. Commits into git (if present).
-1. Pushes to the repository (if not private).
