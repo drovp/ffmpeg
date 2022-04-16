@@ -131,8 +131,9 @@ async function installFromOnlineArchive(
 	progress(null);
 	stage('extracting');
 	log(`archive: ${archivePath}`);
-	const extractedFiles = await extract(archivePath);
+	const extractedFiles = await extract(archivePath, {onProgress: progress});
 	const firstFile = extractedFiles[0];
+	progress(null);
 
 	if (!firstFile || extractedFiles.length !== 1) {
 		if (extractedFiles.length === 0) throw new Error(`Extracted archive files list is empty.`);
