@@ -137,7 +137,7 @@ async function installFromOnlineArchive(
 
 	if (!firstFile || extractedFiles.length !== 1) {
 		if (extractedFiles.length === 0) throw new Error(`Extracted archive files list is empty.`);
-		else throw new Error(`Unexpected archive structure:\b${extractedFiles.join('\n')}`);
+		else throw new Error(`Unexpected archive structure:\n${extractedFiles.join('\n')}`);
 	}
 
 	if (onBeforeCopy) await onBeforeCopy();
