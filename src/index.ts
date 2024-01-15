@@ -66,7 +66,7 @@ async function installWindows(utils: InstallUtils) {
 	await recentlyThrottle(utils, () =>
 		installFromOnlineArchive(
 			{
-				url: 'https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-full.7z',
+				url: 'https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z',
 				filesToExtract: {
 					'{rootFile}/bin/ffmpeg.exe': 'ffmpeg.exe',
 					'{rootFile}/bin/ffprobe.exe': 'ffprobe.exe',
@@ -89,7 +89,7 @@ async function installLinux(utils: InstallUtils) {
 	await recentlyThrottle(utils, () =>
 		installFromOnlineArchive(
 			{
-				url: `https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-${arch}-static.tar.xz`,
+				url: `https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-${arch}-static.tar.xz`,
 				filesToExtract: {
 					'{rootFile}/ffmpeg': 'ffmpeg',
 					'{rootFile}/ffprobe': 'ffprobe',
@@ -109,7 +109,7 @@ async function installLinux(utils: InstallUtils) {
 async function installDarwin(name: string, utils: InstallUtils) {
 	await installFromOnlineArchive(
 		{
-			url: `https://evermeet.cx/ffmpeg/get/${name}/7z`,
+			url: `https://evermeet.cx/ffmpeg/getrelease/${name}/7z`,
 			filesToExtract: {[name]: name},
 		},
 		utils
